@@ -1,0 +1,40 @@
+{% extends 'navigation.html' %}
+{% block body %}
+<center><br><h2 style="color:red">View Discharged Patient</h2></center>
+ <div class="container">
+<table class="table table-bordered" id="myTable">
+  <thead>
+  <tr>
+      <th>Sr.No</th>
+    <th>Patient name</th>
+    <th>Disease</th>
+    <th>Discharged By</th>
+      <th>Date</th>
+    <th>Time</th>
+    <th>Action</th>
+  </tr>
+  </thead>
+   <tbody>
+
+    {% for i in data %}
+
+  <tr>
+
+    <td>{{forloop.counter}}</td>
+    <td>{{i.patient.name}}</td>
+    <td>{{i.disease}}</td>
+    <td>Dr. {{i.doctor.name}}</td>
+      <td>{{i.date1}}</td>
+      <td>{{i.time1}}</td>
+      <td><a href="{% url 'delete_discharged' i.id %}"><button class="button button1">delete</button></a>
+          <a href="{% url 'get' i.id %}" style="margin-left:20px"><button class="button button1">View slip</button></a></td>
+
+  </tr>
+
+    {% endfor %}
+    </tbody>
+{{count}}
+</table>
+
+ </div>
+{% endblock %}

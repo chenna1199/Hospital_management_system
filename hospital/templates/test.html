@@ -1,0 +1,31 @@
+
+{% extends 'navigation.html' %}
+{% block body %}
+<style>
+    input[type=text][type=date][type=number]{
+    width:400px;
+    border-radius:12px;
+    height:29px;}
+    select{
+    width:400px;
+    border-radius:12px;
+    height:29px;}
+</style>
+<body style="background-color:wheat">
+  <br> <center><h1 style="color:white;background-color:SaddleBrown;border:2px solid SaddleBrown;width:700px">Add Test</h1>
+
+   </center>
+    <center>
+<form action="" method="post">
+    {% csrf_token %}
+
+
+         Test(not required)<br><input style="width:400px;border-radius:12px;height:29px" placeholder="Enter Test" type="text" name="test">
+   <br><br>
+    Purpose(not required)<br><input style="width:400px;border-radius:12px;height:29px" placeholder="Enter Purpose" type="text" name="purpose">
+   <br>
+<br><input style="border:2px solid SaddleBrown;border-radius:16px;padding:10px;width:220px;margin-top:10px;background-color:SaddleBrown;color:white" type="submit" value="Submit">
+    </center>
+</form>
+   </body>
+{% endblock %}

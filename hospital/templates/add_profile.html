@@ -1,0 +1,37 @@
+
+{% extends 'navigation.html' %}
+{% block body %}
+<style>
+    input[type=text][type=date][type=number]{
+    width:400px;
+    border-radius:12px;
+    height:29px;}
+    select{
+    width:400px;
+    border-radius:12px;
+    height:29px;}
+</style>
+<body style="background-color:wheat">
+  <br> <center><h1 style="color:white;background-color:SaddleBrown;border:2px solid SaddleBrown;width:700px">Make Your Profile</h1>
+
+   </center>
+    <center>
+<form action="" method="post">
+    {% csrf_token %}
+
+
+         Director Name<br><input style="width:400px;border-radius:12px;height:29px" placeholder="Enter Director Name" type="text" name="direct">
+   <br><br>
+    Email : <br><input style="width:400px;border-radius:12px;height:29px" placeholder="Enter Email" type="email" name="email">
+   <br>
+
+    Contact Number<br><input style="width:400px;border-radius:12px;height:29px" placeholder="Enter Mobile number" type="text" name="mobile">
+   <br><br>
+    Full Address<br><input style="width:400px;border-radius:12px;height:29px" placeholder="Enter Address detail" type="text" name="address">
+   <br><br>Hospital Name/Medical center name<br><input style="width:400px;border-radius:12px;height:29px" placeholder="Enter Hospital/Medical Center Name" type="text" name="hospital">
+   <br>
+<br><input style="border:2px solid SaddleBrown;border-radius:16px;padding:10px;width:220px;margin-top:10px;background-color:SaddleBrown;color:white" type="submit" value="Submit">
+    </center>
+</form>
+   </body>
+{% endblock %}

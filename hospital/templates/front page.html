@@ -1,0 +1,29 @@
+{% extends 'navigation.html' %}
+{% load static %}
+{% block body %}
+<center><br><br><h2 class="container" style="border:1px solid saddlebrown;background-color:brown;color:white;">DASHBOARD</h2>
+<br><table align="center">
+    <tr align="center">
+        <td>
+            <a href="{% url 'view_tested' %}"><img src="{% static 'images/download.jpg' %}" style="border:2px solid black;height:100px;width:100px;border-radius:50%;margin-left:50px"></a>
+        </td>
+        <td><a href="{% url 'view_patient' %}"><img src="{% static 'images/download (1).jpg' %}" style="border:2px solid black;height:100px;width:100px;border-radius:50%;margin-left:50px"></a>
+        </td>
+        <td><a href="{% url 'view_appointment' %}"><img src="{% static 'images/download.png' %}" style="border:2px solid black;height:100px;width:100px;border-radius:50%;margin-left:50px"></a>
+        </td>
+        <td><a href="{% url 'view_discharge' %}"><img src="{% static 'images/images.jpg' %}" style="border:2px solid black;height:100px;width:100px;border-radius:50%;margin-left:50px"></a>
+        </td>
+    </tr>
+    <tr align="center">
+        <td><h3 style="margin-left:80px">Testing lab</h3></td>
+        <td><h3 style="margin-left:80px">Patient</h3></td>
+        <td><h3 style="margin-left:80px">Appointment</h3></td>
+        <td><h3 style="margin-left:80px">Discharge Paper</h3></td>
+    </tr>
+
+</table>
+    <a href="{% url 'view_doctor' %}"><img src="{% static 'images/images (1).jpg' %}" style="border:2px solid black;height:300px;width:300px;border-radius:50%;margin-top:70px"></a><br><h3>Doctors</h3>
+
+</center>
+
+{% endblock %}

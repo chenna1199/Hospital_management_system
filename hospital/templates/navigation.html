@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+  <title>Navigation Bar</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <link rel = stylesheet href = "//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+  <script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+  <script>
+    $(document).ready( function () {
+    $('#myTable').DataTable();
+} );
+  </script>
+
+  <style>
+* {
+  box-sizing: border-box;
+}
+
+#myInput {
+  background-image: url('/css/searchicon.png');
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  width: 20%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+#myTable {
+  border-collapse: collapse;
+  width: 100%;
+  border: 1px solid #ddd;
+  font-size: 18px;
+}
+
+#myTable th, #myTable td {
+  text-align: left;
+  padding: 12px;
+}
+
+#myTable tr {
+  border-bottom: 1px solid #ddd;
+}
+
+#myTable tr.header, #myTable tr:hover {
+  background-color: #f1f1f1;
+}
+
+.button {
+  background-color: orange; /* Green */
+  border: none;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 1px 1px;
+  cursor: pointer;
+}
+
+
+.button1 {border-radius: 15px;}
+
+
+</style>
+
+
+</head>
+<body>
+<nav class="navbar navbar-expand-sm bg-info navbar-dark" style="background-color:SaddleBrown">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#" style="color:White;font-family:cursive;font-size:20px">Covid-19 Hospital Information System</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="{% url 'dashboard' %}" style="color:white">Home</a></li>
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#" style="color:white">Patients  <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="{% url 'view_patient' %}">View Patient</a></li>
+          <li><a href="{% url 'add_patient' %}">Add Patient</a></li>
+        </ul>
+      </li>
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#" style="color:white">Doctors  <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="{% url 'view_doctor' %}">View Doctor</a></li>
+          <li><a href="{% url 'add_doctor' %}">Add Doctor</a></li>
+        </ul>
+      </li>
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#" style="color:white">Test  <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="{% url 'test' %}">Add Test & Purpose</a></li>
+          <li><a href="{% url 'view_test' %}">view test</a></li>
+          <li><a href="{% url 'view_purpose' %}">view Purpose</a></li>
+        </ul>
+      </li>
+      </li>
+
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#" style="color:white">Appointment  <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="{% url 'view_appointment' %}">View Appointment</a></li>
+          <li><a href="{% url 'add_appointment' %}">Add Appointment</a></li>
+        </ul>
+      </li>
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#" style="color:white">Discharge  <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="{% url 'discharge' %}">Discharge Form</a></li>
+          <li><a href="{% url 'view_discharge' %}">View Discharged</a></li>
+        </ul>
+          </li>
+          <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#" style="color:white">Lab Manual  <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="{% url 'testing' %}">Testing Form</a></li>
+          <li><a href="{% url 'view_tested' %}">View Tested</a></li>
+
+        </ul>
+      </li>
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#" style="color:white">Profile Detail  <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="{% url 'add_profile' %}">Make profile</a></li>
+          <li><a href="{% url 'profile' request.user.id %}">Change profile</a></li>
+
+        </ul>
+      </li>
+      <li><a href="{% url 'logout' %}" style="color:white">Logout</a></li>
+
+<li><h4 style="margin-left:190px;color:red">Welcome...<span style="color:red">{{request.user.username}}</span></h4></li>
+
+
+    </ul>
+  </div>
+</nav>
+
+
+{% block body %}
+{% endblock %}
+
+</body>
+</html>

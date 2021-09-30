@@ -1,0 +1,98 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+    <head>
+        <title>Title</title>
+        <style type="text/css">
+            body {
+                font-weight: 200;
+                font-size: 14px;
+            }
+            .header {
+                font-size: 20px;
+                font-weight: 100;
+                text-align: center;
+                color: #007cae;
+            }
+            .title {
+                font-size: 22px;
+                font-weight: 100;
+               /* text-align: right;*/
+               padding: 10px 20px 0px 20px;
+            }
+            .title span {
+                color: #007cae;
+            }
+            .details {
+                padding: 10px 20px 0px 20px;
+                text-align: left !important;
+                /*margin-left: 40%;*/
+            }
+            .hrItem {
+                border: none;
+                height: 1px;
+                /* Set the hr color */
+                color: #333; /* old IE */
+                background-color: #fff; /* Modern Browsers */
+            }
+        </style>
+    </head>
+    <body>
+        <div class='wrapper'>
+            <div class='header'>
+                <p class='title'>Patient Registration</p><hr>
+            </div>
+        <div>
+        <div class='details'>
+           <table align="center" width="900">
+                <tr>
+                    <td><h1 style="color:green">{{data2.m_name}}</h1><b>Address :</b>{{data2.add}}
+                        <br>Email Id : {{data2.email}}<br>Contact : {{data2.contact}}</td>
+                    <td><strong>Date : {{today}}<br>
+                    Invoice No. : {{data.id}}<br><br>
+                    Director  : {{data2.h_name}}<br>
+                    Time : {{time}}<br></strong></td>
+                </tr>
+
+            </table>
+            <table align="center" width="900" border="1">
+                <tr><th colspan="4" style="background-color:green">Patient & Hospital details</th></tr>
+                <tr>
+                    <td style="color:green;width:200px">Patient Name :</td>
+                    <td>{{data.name}}</td>
+                    <td style="color:green">Contact :</td>
+                    <td>{{data.mobile}}</td>
+                </tr>
+                <tr>
+                    <td style="color:green">Patient Age :</td>
+                    <td>{{data.age}}</td>
+                    <td style="color:green">Relation :</td>
+                    <td>{{data.rel}}</td>
+                </tr>
+                <tr>
+                    <td style="color:green">Patient Gender :</td>
+                    <td >{{data.gender}}</td>
+                    <td style="color:green">Purpose</td>
+                    <td style="color:red;font-size:15px">{{data.purpose.purpose}}</td>
+                </tr>
+                <tr>
+                    <td style="color:green">Patient Address :</td>
+                    <td>{{data.address}}</td>
+                    <td style="color:green">Date :</td>
+                    <td>{{today}}</td>
+                </tr>
+                <tr>
+                    <td style="color:green">CNIC</td>
+                    <td>{{data.cnic}}</td>
+                    <td style="color:green">Disease :</td>
+                    <td>{{data.disease}}</td>
+                </tr>
+            </table><br>
+            <table>
+                <tr>
+            <td align="right"><h2 style="color:green;float:right"><u align="right">Registration Fee : {{data.payment}}</u></h2></td>
+                </tr>
+                </table>
+                    </div>
+    </div>
+    </body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+    <head>
+        <title>Title</title>
+        <style type="text/css">
+            body {
+                font-weight: 200;
+                font-size: 14px;
+            }
+            .header {
+                font-size: 20px;
+                font-weight: 100;
+                text-align: center;
+                color: #007cae;
+            }
+            .title {
+                font-size: 22px;
+                font-weight: 100;
+               /* text-align: right;*/
+               padding: 10px 20px 0px 20px;
+            }
+            .title span {
+                color: #007cae;
+            }
+            .details {
+                padding: 10px 20px 0px 20px;
+                text-align: left !important;
+                /*margin-left: 40%;*/
+            }
+            .hrItem {
+                border: none;
+                height: 1px;
+                /* Set the hr color */
+                color: #333; /* old IE */
+                background-color: #fff; /* Modern Browsers */
+            }
+        </style>
+    </head>
+    <body>
+        <div class='wrapper'>
+            <div class='header'>
+                <p class='title'>Testing Lab Slip</p><hr>
+            </div>
+        <div>
+        <div class='details'>
+           <table align="center" width="900">
+                <tr>
+                    <td><h1 style="color:green">{{data2.m_name}}</h1>Address : {{data2.add}}<br>Email : {{data2.email}} <br>Contact : {{data2.contact}}</td>
+                    <td><strong>Date : {{today}}<br>
+                    Invoice No. : {{data.id}}<br>
+                    Discharged by : Dr. {{data.doctor.name}}<br>
+                    Specialization :{{data.doctor.special}}<br></strong></td>
+                </tr>
+
+            </table>
+            <table align="center" width="900" border="1">
+                <tr><th colspan="5" style="background-color:green">Patient & Hospital details</th></tr>
+                <tr>
+                    <td style="color:green;width:200px">Patient Name :</td>
+                    <td colspan="2">{{data.patient.name}}</td>
+                    <td style="color:green">Contact :</td>
+                    <td>{{data.patient.mobile}}</td>
+                </tr>
+                <tr>
+                    <td style="color:green">Patient Age :</td>
+                    <td colspan="2">{{data.patient.age}}</td>
+                    <td style="color:green">Test :</td>
+                    <td>{{data.test}}</td>
+                </tr>
+                <tr>
+                    <td style="color:green">Patient Gender :</td>
+                    <td colspan="2">{{data.patient.gender}}</td>
+                    <td style="color:green">Delivery date :</td>
+                    <td>{{data.delivery_date}}</td>
+                </tr>
+                <tr>
+                    <td style="color:green">Patient Address :</td>
+                    <td colspan="2">{{data.patient.address}}</td>
+                    <td style="color:green">Date :</td>
+                    <td>{{data.date1}}</td>
+                </tr>
+            </table>
+            <h2 style="color:green"><u>Fee Structure</u></h2>
+            <table align="center" width="900" border="1">
+                <tr>
+                    <td style="color:green">Lab Test </td>
+                    <td style="color:green">Blood Group</td>
+                    <td style="color:green">Timimg</td>
+                    <td style="color:green">Times/Day</td>
+                    <td style="color:green">Prices</td>
+                </tr>
+                <tr style="height:300px">
+                    <td style="color:green">{{data.test}}</td>
+                    <td>{{data.b_group}}</td>
+                    <td style="color:green">5:00</td>
+                    <td>3/day</td>
+                    <td>{{data.payment}}</td>
+                </tr>
+                <tr>
+                    <th colspan="4">Total : </th>
+                    <th> {{data.payment}}</th>
+
+                </tr>
+            </table>
+        </div>
+    </div>
+    </body>
+</html>

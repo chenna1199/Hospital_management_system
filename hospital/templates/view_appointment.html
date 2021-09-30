@@ -1,0 +1,35 @@
+{% extends 'navigation.html' %}
+{% block body %}
+<br><center><h2 style="color:red">View Appointment</h2></center>
+ <div class="container">
+<table class="table table-bordered" id="myTable">
+  <thead>
+  <tr>
+    <th>Patient name</th>
+    <th>Doctor name</th>
+      <th> Date</th>
+    <th>Time</th>
+    <th>Remove</th>
+  </tr>
+  </thead>
+   <tbody>
+
+    {% for i in app %}
+
+  <tr>
+
+    <td>{{i.patient}}</td>
+    <td>{{i.doctor}}</td>
+      <td>{{i.date1}}</td>
+      <td>{{i.time1}}</td>
+      <td><a href="{% url 'delete_appointment' i.id %}"><button class="button button1">delete</button></a></td>
+
+  </tr>
+
+    {% endfor %}
+    </tbody>
+{{count}}
+</table>
+
+ </div>
+{% endblock %}

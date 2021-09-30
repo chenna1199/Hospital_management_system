@@ -1,0 +1,32 @@
+{% extends 'navigation.html' %}
+{% block body %}
+<br><center><h2 style="color:red">View Test</h2></center>
+ <div class="container">
+<table class="table table-bordered" id="myTable">
+  <thead>
+  <tr>
+      <th>Sr.No</th>
+    <th>Test name</th>
+
+    <th>Action</th>
+  </tr>
+  </thead>
+   <tbody>
+
+    {% for i in data %}
+
+  <tr>
+
+    <td>{{forloop.counter}}</td>
+    <td>{{i.test}}</td>
+
+      <td><a href="{% url 'delete_test' i.id %}"><button class="button button1">delete</button></a>
+  </tr>
+
+    {% endfor %}
+    </tbody>
+{{count}}
+</table>
+
+ </div>
+{% endblock %}

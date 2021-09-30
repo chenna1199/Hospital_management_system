@@ -1,0 +1,49 @@
+
+{% extends 'navigation.html' %}
+{% block body %}
+<style>
+    input[type=text]{
+    width:400px;
+    border-radius:12px;
+    height:29px;}
+    select{
+    width:400px;
+    border-radius:12px;
+    height:29px;}
+</style>
+<body style="background-color:wheat">
+   <center><h1 style="color:white;background-color:SaddleBrown;border:2px solid ;width:700px;margin-top:60px">Discharge Patient</h1>
+
+   </center>
+    <center>
+<form action="" method="post">
+    {% csrf_token %}
+
+
+     Patient id<br><select  name="patient">
+            {% for i in pat %}
+            <option value="{{i.id}}">({{forloop.counter}}).{{i.id}}</option>
+            {% endfor %}
+        </select><br>
+         Disease<br><input placeholder="Diseases" type="text" name="diseases"><br>
+    
+          Patient Name<br><select  name="name">
+        {% for i in pat %}
+            <option value="{{i.name}}">{{forloop.counter}}.{{i.name}}</option>
+            {% endfor %}
+        </select><br>
+         Payment Status<br><input placeholder="Enter Payment Status" type="text" name="payment">
+   <br>
+
+            Remaining Outstanding<br><input placeholder="Remaining Balance" type="text" name="outstanding"><br>
+       Dishcharge By(Dr. Name)<br><select   name="doctor">
+        {% for i in doc %}
+            <option value="{{i.name}}">Dr. {{i.name}}</option>
+            {% endfor %}
+        </select><br>
+
+<br><input style="border:2px solid SaddleBrown;border-radius:16px;padding:10px;width:220px;margin-top:10px;background-color:SaddleBrown;color:white" type="submit" value="Generate Slip" >
+    </center>
+</form>
+   </body>
+{% endblock %}

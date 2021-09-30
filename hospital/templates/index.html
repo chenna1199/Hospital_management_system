@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+  <title>Navigation Bar</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <link rel = stylesheet href = "//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+  <script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+  <script>
+    $(document).ready( function () {
+    $('#myTable').DataTable();
+} );
+  </script>
+<style>
+
+.button {
+  background-color: orange; /* Green */
+  border: none;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+
+.button1 {border-radius: 12px;}
+
+
+</style>
+
+
+</head>
+<body>
+<nav class="navbar navbar-expand-sm bg-info navbar-dark" style="background-color:SaddleBrown">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#" style="color:orange">Hospital Management System</a>
+    </div>
+    <ul class="nav navbar-nav">
+              <li class="active"><a href="{% url 'dashboard' %}" style="color:white">Dashboard</a></li>
+
+      <li class="active"><a href="{% url 'home' %}" style="color:white">Home</a></li>
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#" style="color:white">Patients  <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="{% url 'view_patient' %}">View Patient</a></li>
+          <li><a href="{% url 'add_patient' %}">Add Patient</a></li>
+        </ul>
+      </li>
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#" style="color:white">Doctors  <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="{% url 'view_doctor' %}">View Doctor</a></li>
+          <li><a href="{% url 'add_doctor' %}">Add Doctor</a></li>
+        </ul>
+      </li>
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#" style="color:white">Appointment  <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="{% url 'view_appointment' %}">View Appointment</a></li>
+          <li><a href="{% url 'add_appointment' %}">Add Appointment</a></li>
+        </ul>
+      </li>
+        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#" style="color:white">Discharge  <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="{% url 'discharge' %}">Discharge Form</a></li>
+          <li><a href="{% url 'view_discharge' %}">View Discharged</a></li>
+        </ul>
+          </li>
+         <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#" style="color:white">Lab Manual  <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="{% url 'testing' %}">Testing Form</a></li>
+          <li><a href="{% url 'view_tested' %}">View Tested</a></li>
+
+        </ul>
+
+
+      <li><a href="{% url 'logout' %}" style="color:white">Logout</a></li>
+
+<li><span style="font-size:20px;color:red">Welcome...<span style="color:red">{{request.user.username}}</span></span></li>
+
+
+    </ul>
+  </div>
+</nav>
+<div class="progressive-effects" id="skills">
+		<div class="container" style="margin-top:160px">
+
+
+			<!-- Stats -->
+			<div class="stats">
+
+				<div class="stats-info">
+                    {% for i in stats %}
+					<div class="col-md-4 col-sm-4 stats-grid stats-grid-1">
+						<div class="stats-img" align="center">
+                            <p align="center"><h3>{{i.stats_name}}</h3></p>
+							<img src="{{i.stats_image.url}}"  alt="Corsa Racer" style="width:200px;height:200px">
+						</div>
+                        <div class='numscroller counter numscroller-big-bottom' align="center" data-slno='1' data-min='0' data-max='7000' data-delay='.5' data-increment=4><h4>{{i.stats_num}}</h4></div>
+
+					</div>
+					{% endfor %}
+					<div class="clearfix"></div>
+				</div>
+
+			</div>
+			<!-- //Stats -->
+
+		</div>
+	</div>
+
+			<!-- //Stats -->
+<!-- Progressive-Effects-Animation-JavaScript -->
+			<script type="text/javascript" src="{% static 'js/jquery.inview.min.js' %}"></script>
+			<script type="text/javascript" src="{% static 'js/wow.min.js' %}"></script>
+			<script type="text/javascript" src="{% static 'js/mousescroll.js' %}"></script>
+			<script type="text/javascript" src="{% static 'js/main.js' %}"></script>
+		<!-- //Progressive-Effects-Animation-JavaScript -->
+
+		<!-- Stats-Number-Scroller-Animation-JavaScript -->
+			<script src="{% static 'js/waypoints.min.js' %}"></script>
+			<script src="{% static 'js/counterup.min.js' %}"></script>
+			<script>
+				jQuery(document).ready(function( $ ) {
+					$('.counter').counterUp({
+						delay: 10,
+						time: 1000
+					});
+				});
+			</script>
+
+
+</body>
+</html>

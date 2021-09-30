@@ -1,0 +1,47 @@
+{% extends 'navigation.html' %}
+{% block body %}
+ <div class="container">
+<center><h2 style="color:red">View Patient</h2></center>
+
+<table class="table table-bordered" id="myTable">
+  <thead>
+  <tr>
+    <th>Patient Id</th>
+    <th>Patient name</th>
+    <th>CNIC</th>
+    <th>Relation</th>
+      <th> Gender</th>
+      <th> Age</th>
+    <th>Mobile</th>
+      <th>Address</th>
+    <th>Remove</th>
+      <th>Edit</th>
+      <th>Report</th>
+  </tr>
+  </thead>
+    <tbody>
+    {% for i in doc %}
+
+  <tr>
+
+    <td>{{i.id}}</td>
+    <td>{{i.name}}</td>
+    <td>{{i.cnic}}</td>
+    <td>{{i.rel}}</td>
+      <td>{{i.gender}}</td>
+      <td>{{i.age}}</td>
+      <td>{{i.mobile}}</td>
+      <td>{{i.address}}</td>
+      <td><a href="{% url 'delete_patient' i.id %}"><button class="button button1">delete</button></a></td>
+      <td><a href="{% url 'edit_patient' i.id %}"><button class="button button1" style="background-color:red">..edit.</button></a></td>
+      <td><a href="{% url 'get2' i.id %}"><button class="button button1" style="background-color:green">slip</button></a></td>
+
+  </tr>
+
+    {% endfor %}
+  </tbody>
+
+</table>
+   </div>
+
+{% endblock %}
