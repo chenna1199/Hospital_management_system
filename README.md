@@ -5,5 +5,6 @@
 #Dasboard
 ![dashboard](https://user-images.githubusercontent.com/91515978/135424217-89628148-988e-449c-abfa-680cab8c72d9.png)
 
-IDE  : PYCHARM
-TO RUN THE PROJECT : python manage.py runserver 
+#IDE  : PYCHARM
+
+#TO RUN THE PROJECT : python manage.py runserver 
